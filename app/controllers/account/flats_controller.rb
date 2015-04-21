@@ -27,11 +27,12 @@ module Account
     end
 
     def edit
+      @flat = current_user.flats.find(params[:id])
     end
 
     def update
       @flat.update(flat_params)
-      redirect_to user_flat_path(@flat)
+      redirect_to account_flat_path(@flat)
     end
 
     private
