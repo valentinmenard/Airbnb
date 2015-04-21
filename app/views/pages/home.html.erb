@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>SuprTipi</title>
+
+</head>
+
+<body>
+
+  <!-- Banner -->
+
+  <div id="banner">
+    <div class="filter"></div>
+    <h1>Welcome Home</h1>
+    <br>
+    <p>Anywhere at Home</p>
+  </div>
+
+  <div id="search">
+
+  </div>
+
+  <div id="features" class="">
+    <h2></h2>
+    <div class="container">
+      <div class="row">
+        <% @flats.sample(6).each do |flat|%>
+          <div class="col-xs-6 col-md-4">
+            <div class="card text-center">
+              <div class="filter-card"></div>
+              <img data-sr="enter left, wait 1s" src="<%= flat.picture_1 %>" alt="flat_picture" class="">
+              <h3><%= flat.title %></h3>
+              <p>
+                <%= flat.description %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>

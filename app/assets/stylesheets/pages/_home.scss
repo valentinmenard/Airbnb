@@ -1,0 +1,81 @@
+#pages_home{
+
+  .navbar {
+    margin-bottom: 0;
+
+  }
+
+  #banner {
+    background-image: url(marina-bay.jpg);
+    background-size: cover;
+    position: relative;
+    height: 700px;
+    margin-top: -95px;
+    z-index: 0;
+    display: block;
+    .filter {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: white;
+      opacity: 0.2;
+    }
+    h1 {
+      font-size: 50px;
+      text-align: center;
+      padding-top: 320px;
+      position: relative;
+      z-index: 2;
+    }
+    p {
+      font-size: 35px;
+      text-align: center;
+      position: relative;
+      z-index:2;
+    }
+
+  }
+
+  #features {
+    position: relative;
+    display:block;
+
+    .card {
+      position: relative;
+      z-index: 0;
+      padding: 14px;
+      margin: 10px;
+      img {
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 200px;
+        padding-top: 14px;
+
+        z-index: 2;
+      }
+      h3, p {
+        z-index: 2;
+      }
+      .filter-card {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(250,250,250,0.9);
+        opacity: 0.2;
+      }
+    }
+  }
+}
+
+
+
+
+
+
