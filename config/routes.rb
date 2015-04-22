@@ -5,11 +5,16 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :flats, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [ ]
   end
 
   namespace :account do
-    resources :bookings, only: [:index, :create, :new, :show]
+    resources :bookings, only: [ ] do
+      collection do
+        get 'index_owner'
+        get 'index_renter'
+      end
+    end
     resources :flats, only: [:index, :new, :create, :show, :edit, :update]
   end
 end
