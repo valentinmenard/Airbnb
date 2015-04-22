@@ -8,10 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="<%= "#{params[:controller].gsub(/\//, '_')}_#{params[:action]}" %>">
   <%= render "shared/navbar" %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <!-- <p class="notice"><%= notice %></p> -->
+<!--   <p class="alert"><%= alert %></p> -->
 
 <%= yield %>
 
