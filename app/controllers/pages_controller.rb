@@ -9,6 +9,6 @@ class PagesController < ApplicationController
   end
 
   def index
-  @flats = Flat.search(params[:search])
   end
 
+end
