@@ -16,7 +16,7 @@ module Account
     def update
       @flat = Flat.find(params[:id])
       @flat.update(flat_params)
-      redirect_to account_flat_path(@flat)
+      redirect_to account_flats_path
     end
 
     def new
