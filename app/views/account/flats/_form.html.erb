@@ -1,20 +1,19 @@
-<%= simple_form_for(@flat, url: (@flat.new_record? ? account_flats_path : account_flat_path(@flat)), html: { multipart: true }) do |flat| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for(@flat, url: (@flat.new_record? ? account_flats_path : account_flat_path(@flat)), html: { multipart: true }) do |flat| %>
 
-  <%= flat.input :title %>
+      <%= flat.input :title %>
+      <%= flat.input :description, as: :text %>
+      <%= flat.input :price %>
+      <%= flat.input :city %>
+      <%= flat.input :capacity %>
+      <%= flat.input :picture_1 %>
+      <%= flat.input :picture_2 %>
+      <%= flat.input :picture_3 %>
 
-  <%= flat.input :description, as: :text %>
-
-  <%= flat.input :price %>
-
-  <%= flat.input :city %>
-
-  <%= flat.input :capacity %>
-
-  <%= flat.input :picture_1 %>
-
-  <%= flat.input :picture_2 %>
-
-  <%= flat.input :picture_3 %>
-
-  <%= flat.submit class: "btn btn-danger" %>
-<% end %>
+      <%= flat.submit class: "btn btn-danger" %>
+    <% end %>
+    </div>
+  </div>
+</div>
