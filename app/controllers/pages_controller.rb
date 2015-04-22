@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_filter :authenticate_user!
+
   def home
     @flats= Flat.all
   end
@@ -10,4 +12,3 @@ class PagesController < ApplicationController
   @flats = Flat.search(params[:search])
   end
 
-end

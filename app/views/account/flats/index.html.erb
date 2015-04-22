@@ -1,3 +1,10 @@
+<% @flats.each do |flat| %>
+    <%= image_tag(flat.picture_1) %>
+    <%= flat.price %>
+    <%= link_to flat.title, flat_path(flat.id) %>
+    <%= flat.description.first(50) %>
+    <%= link_to "edit", edit_account_flat_path(flat.id) %>
+<% end %>
 
-<h2> My flats </h2>
+
 
