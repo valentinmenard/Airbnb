@@ -1,30 +1,12 @@
 module Account
   class FlatsController < ApplicationController
-    # layout 'account'
 
     before_action :authenticate_user!
 
     def index
-      @flats = Flat.all
+      @flats = current_user.flats
+
       # if @flats.where(:city)
-    end
-
-    def show
-      @flat = Flat.find(params[:id])
-    end
-
-    def new
-      @flat = Flat.new
-    end
-
-    def create
-      @flat = Flat.new(flat_params)
-
-      if @flat.save
-        redirect_to account_flat_path(@flat)
-      else
-        render :new
-      end
     end
 
     def edit
@@ -35,6 +17,19 @@ module Account
       @flat = Flat.find(params[:id])
       @flat.update(flat_params)
       redirect_to account_flat_path(@flat)
+    end
+
+    def new
+      @flat = Flat.new
+    end
+
+    def create
+      @flat = current_user.flats.new(flat_params)
+      if @flat.save
+        redirect_to flat_path(@flat)
+      else
+        render :new
+      end
     end
 
     private

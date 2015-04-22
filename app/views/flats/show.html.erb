@@ -1,21 +1,55 @@
-<div class="cover_picture">
-  <% @flat.picture_1 %>
-</div>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-1">
-      <p>>picture a ajouter</p
-    </div>
-    <div class="col-xs-4">
-      <h1> <% @flat.title %> </h1>
-      <p>  <% @flat.city %> </p>
-    </div>
-    <div class="col-xs-3">
-
+<div id="cover_picture">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= image_tag(@flat.picture_1) %>
+      </div>
     </div>
   </div>
 </div>
 
-<p>Find me in app/views/flats/show.html.erb</p>
+  <div class="bg-white">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-3">
+
+        </div>
+        <div class="col-xs-3">
+          <h1> <%= @flat.title %> </h1>
+          <p>  <%= @flat.city %> </p>
+        </div>
+        <div class="col-xs-6">
+          <table>
+            <tr>
+              <td>Price</td>
+              <td> <%= @flat.price %> per night </td>
+            </tr>
+            <tr>
+              <td> <%= @flat.price %>  ajouter le nombre de nuité</td>
+              <td> total</td>
+            </tr>
+          </table>
+          <%= link_to 'send a booking', new_flat_booking_path(@flat), class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <h2>About this flat</h2>
+      <p> <%= @flat.description %> </p>
+      <div class="col-xs-4">
+        <p> <%= image_tag(@flat.picture_1) %> </p>
+      </div>
+      <div class="col-xs-4">
+        <p> <%= image_tag(@flat.picture_2) %> </p>
+      </div>
+      <div class="col-xs-4">
+        <p> <%= image_tag(@flat.picture_3) %> </p>
+      </div>
+    </div>
+  </div>
+

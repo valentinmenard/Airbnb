@@ -1,18 +1,7 @@
-<h2> dates </h2>
-
-<%= form_tag(flats_path, method: :get) do %>
-  <%= date_field_tag :starting_on, params[:starting_on] %>
-  <%= date_field_tag :ending_on, params[:ending_on] %>
-  <%= number_field_tag :capacity, params[:capacity] %>
-
-  <%= submit_tag "Search", class: "btn btn-danger" %>
-<% end %>
-
-
 <% @flats.each do |flat| %>
     <%= image_tag(flat.picture_1) %>
     <%= flat.price %>
-    <%= link_to flat.title, account_flat_path(:id) %>
+    <%= link_to flat.title, flat_path(flat.id) %>
     <%= flat.description.first(50) %>
 <% end %>
 
