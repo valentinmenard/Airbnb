@@ -5,19 +5,20 @@ module Account
     before_action :authenticate_user!
 
     def index
-      @flats = current_user.flats
+      @flats = Flat.all
+      # if @flats.where(:city)
     end
 
     def show
-      @flat = current_user.flats.find(params[:id])
+      @flat = Flat.find(params[:id])
     end
 
     def new
-      @flat = current_user.flats.new
+      @flat = Flat.new
     end
 
     def create
-      @flat = current_user.flats.new(flat_params)
+      @flat = Flat.new(flat_params)
 
       if @flat.save
         redirect_to account_flat_path(@flat)
@@ -27,10 +28,11 @@ module Account
     end
 
     def edit
-      @flat = current_user.flats.find(params[:id])
+      @flat = Flat.find(params[:id])
     end
 
     def update
+      @flat = Flat.find(params[:id])
       @flat.update(flat_params)
       redirect_to account_flat_path(@flat)
     end
