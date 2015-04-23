@@ -1,7 +1,6 @@
 class Flat < ActiveRecord::Base
 
   belongs_to :user
-  has_many :pictures, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
   has_attached_file :picture_1, styles: { medium: "1200x1200", thumb: "300x300#" }
