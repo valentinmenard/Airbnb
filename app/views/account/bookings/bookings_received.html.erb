@@ -1,12 +1,22 @@
-<h1>Bookings received</h1>
+<h1 class="title-center">Bookings received</h1>
 
-<% current_user.flats.each do |flat| %>
-<% flat.bookings.each do |booking| %>
-  <%= Flat.find(booking.flat_id).title %>
-  <%= booking.starting_on %>
-  <%= booking.ending_on %>
-  <%= booking.accepted %>
-  <% end %>
-<% end %>
+
+<div class="container">
+    <div class="row">
+      <% current_user.flats.each do |flat| %>
+        <% flat.bookings.each do |booking| %>
+          <div class="col-xs-12 col-md-4">
+            <div class="card_booking text-center">
+              <div> <%= image_tag(flat.picture_1)%></div>
+              <div><%= Flat.find(booking.flat_id).title %></div>
+               <div> <strong>starting on </strong> <%= booking.starting_on %></div>
+               <div> <strong>ending on </strong> <%= booking.ending_on %></div>
+               <div><%= booking.accepted %></div>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
 
 <!-- rajouter le nom du locataire -->
