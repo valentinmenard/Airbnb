@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [ ] do
     collection do
       get 'profile'
+      get 'bookings_sent'
     end
   end
 
@@ -13,7 +14,11 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :bookings, only: [:index]
+    resources :bookings, only: [] do
+      collection do
+        get 'bookings_received'
+      end
+    end
     resources :flats
   end
 end

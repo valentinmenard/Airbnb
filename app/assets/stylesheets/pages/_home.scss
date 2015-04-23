@@ -85,8 +85,37 @@
       }
     }
   }
-}
 
+
+.card {
+   background-color: #617684;
+   margin: 20px;
+   width: 300px;
+   display: inline-block;
+   padding: 15px;
+   transition: transform .8s ease;
+   border-radius:5px;
+   &:hover {
+    transform: scale(1.01);
+    }
+
+    img {
+    // position: relative;
+    width: 200px;
+    height: 200px;
+    }
+
+    h2{
+      font-size: 20px;
+      height: 44px;
+    }
+
+    .description{
+      height: 44px;
+    }
+
+  }
+}
 
 
 
