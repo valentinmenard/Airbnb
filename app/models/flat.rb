@@ -16,6 +16,9 @@ class Flat < ActiveRecord::Base
   validates_attachment_content_type :picture_3,
     content_type: /\Aimage\/.*\z/
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   def self.search(search)
     if search
       find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
