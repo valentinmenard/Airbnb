@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :flats, only: [:index, :show] do
+
     resources :bookings, only: [:index, :new, :create]
   end
 
@@ -19,6 +20,6 @@ Rails.application.routes.draw do
         get 'bookings_received'
       end
     end
-    resources :flats
+    resources :flats, only: [:index, :new, :create, :show, :edit, :update]
   end
 end
