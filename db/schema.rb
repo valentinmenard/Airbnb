@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421123555) do
+ActiveRecord::Schema.define(version: 20150423140612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150421123555) do
     t.string   "picture_3_content_type"
     t.integer  "picture_3_file_size"
     t.datetime "picture_3_updated_at"
+    t.string   "address"
   end
 
   add_index "flats", ["user_id"], name: "index_flats_on_user_id", using: :btree

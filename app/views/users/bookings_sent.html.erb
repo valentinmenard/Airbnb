@@ -1,0 +1,21 @@
+<h1>Your bookings</h1>
+<ul>
+  <% current_user.bookings.each do |booking| %>
+    <li>
+      <%= image_tag Flat.find(booking.flat_id).picture_1 %>
+    </li>
+    <li>
+      <%= Flat.find(booking.flat_id).title %>
+    </li>
+    <li>
+      <%= booking.starting_on %>
+    </li>
+    <li>
+      <%= booking.ending_on %>
+    </li>
+    <li>
+      <%= booking.travellers %>
+    </li>
+  <% end %>
+
+</ul>
