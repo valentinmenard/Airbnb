@@ -1,0 +1,12 @@
+<h1>Bookings received</h1>
+
+<% current_user.flats.each do |flat| %>
+<% flat.bookings.each do |booking| %>
+  <%= Flat.find(booking.flat_id).title %>
+  <%= booking.starting_on %>
+  <%= booking.ending_on %>
+  <%= booking.accepted %>
+  <% end %>
+<% end %>
+
+<!-- rajouter le nom du locataire -->
