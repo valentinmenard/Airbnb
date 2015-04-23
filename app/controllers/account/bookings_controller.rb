@@ -7,11 +7,5 @@ module Account
    end
 
 
-    # private
-
-    # def booking_params
-    #   params.require(:booking).permit(:starting_on, :ending_on, :travellers)
-    # end
-
   end
 end
