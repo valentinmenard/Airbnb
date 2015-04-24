@@ -1,0 +1,20 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<% @bookings.each do |booking| %>
+  <%= booking.flat_id %>
+  <%= booking.user_id %>
+  <%= booking.travellers %>
+  <%= booking.starting_on %>
+  <%= booking.ending_on %>
+
+  <% end %>

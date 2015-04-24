@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 20150424082700) do
     t.string   "picture_3_content_type"
     t.integer  "picture_3_file_size"
     t.datetime "picture_3_updated_at"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "flats", ["user_id"], name: "index_flats_on_user_id", using: :btree
@@ -80,8 +83,8 @@ ActiveRecord::Schema.define(version: 20150424082700) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
-    t.string   "name"
     t.string   "picture"
+    t.string   "name"
     t.string   "token"
     t.datetime "token_expiry"
     t.string   "avatar_file_name"
