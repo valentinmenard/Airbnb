@@ -10,39 +10,22 @@
 <div id="flat_img" style="background: url(<%= @flat.picture_1.url %>); background-repeat:no-repeat; background-size:cover"/>
   <div class="container">
     <div class="row">
-      <div class="col-xs-8">
+      <div class="col-xs-12 col-md-6">
         <div id="title">
           <h1> <%= @flat.title.capitalize %> </h1>
-          <p>  <%= @flat.city.capitalize %> </p>
+          <h2>  <%= @flat.city.capitalize %> </h2>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-  <div class="bg-white">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-1">
-        </div>
-        <div class="col-xs-3">
-
-        </div>
-        <div class="col-xs-1">
-        </div>
-        <div class="col-xs-4">
-          <table class= "table" id="price_table">
-            <tr>
-              <td>Price</td>
-              <td> <%= @flat.price %> per night </td>
-            </tr>
-          </table>
+      <div class="col-xs-12 col-md-6">
+        <div id="title" classe="price">
+          <h2> Price : </h2>
+          <h2>  <%= @flat.price %> per night </h2>
           <%= link_to 'send a booking', new_flat_booking_path(@flat), class: "btn btn-danger" %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <div id="about">
   <div class="container">
@@ -50,13 +33,13 @@
       <h2>About this flat</h2>
       <p> <%= @flat.description %> </p>
       <div class="col-xs-4">
-        <p> <%= image_tag(@flat.picture_1) %> </p>
+        <p> <%= image_tag(@flat.picture_1) if @flat.picture_1_file_name? %> </p>
       </div>
       <div class="col-xs-4">
-        <p> <%= image_tag(@flat.picture_2) %> </p>
+        <p> <%= image_tag(@flat.picture_2) if @flat.picture_2_file_name? %> </p>
       </div>
       <div class="col-xs-4">
-        <p> <%= image_tag(@flat.picture_3) %> </p>
+        <p> <%= image_tag(@flat.picture_3) if @flat.picture_3_file_name? %> </p>
       </div>
     </div>
   </div>

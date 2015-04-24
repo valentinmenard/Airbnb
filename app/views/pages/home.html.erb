@@ -21,17 +21,19 @@
 
 
   <div class="text-center">
-    <h1>List of flats available</h1>
+    <h2>List of flats available</h2>
     <div class="container">
       <div class="row">
         <% @flats.sample(6).each do |flat|%>
           <div class="col-xs-12 col-md-4">
+            <%= link_to flat_path(flat.id) do %>
             <div class="card text-center">
               <!-- rajouter le lien sur la card -->
               <img data-sr="enter left, wait 1s" src="<%= flat.picture_1 %>" alt="flat_picture" class="">
-              <h2><%= link_to flat.title.capitalize.truncate(30), flat_path(flat.id) %></h2>
+              <h3><%=  flat.title.capitalize.truncate(30) %></h3>
               <div class="description"><%= flat.description.truncate(50) %></div>
           </div>
+          <% end %>
         </div>
       <% end %>
     </div>

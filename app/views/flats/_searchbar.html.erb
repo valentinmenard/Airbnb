@@ -1,4 +1,5 @@
 <div id="search">
+
  <%= form_tag(flats_path, method: :get, class: "form-inline text-center") do %>
    <div class="form-group">
      <%= text_field_tag(:city, params[:city], placeholder: "Where?", class: "form-control") %>
@@ -14,4 +15,5 @@
    </div>
      <%= submit_tag("Find !", class: "btn btn-danger") %>
  <% end %>
+
 </div>
