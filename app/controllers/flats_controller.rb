@@ -3,11 +3,13 @@ class FlatsController < ApplicationController
   skip_before_filter :authenticate_user!, only: [:index, :show]
 
   def index
+
     @flats = Flat.where(city: search_params[:city])
-      @markers = Gmaps4rails.build_markers(@flats) do |flat, marker|
-        marker.lat flat.latitude
-        marker.lng flat.longitude
-      end
+
+    @markers = Gmaps4rails.build_markers(@flats) do |flat, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+    end
 
   end
 
