@@ -1,4 +1,34 @@
 #searchbar {
   padding-left: 100px;
-  padding-bottom: 25px;
+  padding-bottom: 30px;
+}
+
+.right-bloc {
+  position: fixed;
+  left: 60%;
+  width: 40%;
+}
+
+.left-bloc {
+  position: relative;
+  width: 60%;
+  left: 0px;
+  top: 60px;
+  bottom: 0px;
+}
+
+#city {
+  width: 160px;
+}
+
+#starting_on {
+  width: 180px;
+}
+
+#ending_on {
+  width: 180px;
+}
+
+#travellers {
+  width: 150px;
 }
