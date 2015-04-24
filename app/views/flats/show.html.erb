@@ -1,3 +1,12 @@
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @flat_coordinates %>;
+      alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
+
 <div id="flat_img" style="background: url(<%= @flat.picture_1.url %>); background-repeat:no-repeat; background-size:cover"/>
   <div class="container">
     <div class="row">
