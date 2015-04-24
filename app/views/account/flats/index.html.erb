@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>All our flats</h1>
+  <h1>All my flats</h1>
 </div>
 <div class="container">
   <div class="row">
@@ -8,10 +8,12 @@
         <div class="card_2 text-center">
           <h2><%= link_to flat.title.capitalize.truncate(30), flat_path(flat.id) %></h2>
           <div><%= image_tag(flat.picture_1) %></div>
+          <br>
           <div id='price'> Price : <%= flat.price %> € </div>
           <div><%= flat.description.truncate(50) %></div>
-          <div><%= link_to("Edit", edit_account_flat_path(flat.id), class: "btn btn-default btn-xs btn-right")%>
-          <%= link_to("More details", flat_path(flat), class: "btn btn-default btn-xs btn-right")%>
+          <br>
+          <div><%= link_to("Edit", edit_account_flat_path(flat.id), class: "btn btn-success")%>
+          <%= link_to("More details", flat_path(flat), class: "btn btn-success")%>
           </div>
         </div>
     </div>
