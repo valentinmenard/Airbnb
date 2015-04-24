@@ -7,10 +7,10 @@
           <%= f.input :email, required: false, autofocus: true %>
           <%= f.input :password, required: false %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          <%= f.button :submit, "Log in", class: "btn btn-info" %>
+          <%= f.button :submit, "Log in", class: "btn btn-block btn-info" %>
       <% end %>
       <br>
-      <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-primary" do %>
+      <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-social btn-facebook" do %>
         <i class="fa fa-facebook"></i> Facebook connect
       <% end %>
     </div>

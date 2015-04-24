@@ -9,10 +9,10 @@
         <%= f.input :email, required: true, autofocus: true %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
         <%= f.input :password_confirmation, required: true %>
-        <%= f.button :submit, "Sign up", class: "btn btn-info" %>
+        <%= f.button :submit, "Sign up", class: "btn btn-block btn-info" %>
       <% end %>
       <br>
-      <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-primary" do %>
+      <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-social btn-facebook" do %>
         <i class="fa fa-facebook"></i> Facebook connect
       <% end %>
     </div>

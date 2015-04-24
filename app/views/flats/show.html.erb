@@ -33,13 +33,13 @@
       <h2>About this flat</h2>
       <p> <%= @flat.description %> </p>
       <div class="col-xs-4">
-        <p> <%= image_tag(@flat.picture_1) %> </p>
+        <p> <%= image_tag(@flat.picture_1) if @flat.picture_1_file_name? %> </p>
       </div>
       <div class="col-xs-4">
-        <p> <%= image_tag(@flat.picture_2) %> </p>
+        <p> <%= image_tag(@flat.picture_2) if @flat.picture_2_file_name? %> </p>
       </div>
       <div class="col-xs-4">
-        <p> <%= image_tag(@flat.picture_3) %> </p>
+        <p> <%= image_tag(@flat.picture_3) if @flat.picture_3_file_name? %> </p>
       </div>
     </div>
   </div>
