@@ -3,11 +3,12 @@
   </div>
   <div class="col-xs-4">
     <%= simple_form_for [@flat, @booking] do |form| %>
-      <%= form.input :starting_on, as: :date %>
-      <%= form.input :ending_on, as: :date %>
+      <%= form.input :starting_on, as: :string, input_html: { :class => "datepicker" }  %>
+      <%= form.input :ending_on, as: :string, input_html: { :class => "datepicker" } %>
       <%= form.input :travellers, as: :integer %>
       <%= form.submit "Book now!", class: "btn btn-default" %>
     <% end %>
   <div class="col-xs-4">
   </div>
 </div>
+

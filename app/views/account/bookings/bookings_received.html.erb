@@ -7,6 +7,7 @@
         <% flat.bookings.each do |booking| %>
           <div class="col-xs-12 col-md-4">
             <div class="card_booking text-center">
+
               <div><%= image_tag(flat.picture_1)%></div>
               <div><%= Flat.find(booking.flat_id).title %></div>
                 <div> <strong>Starting on </strong> <%= booking.starting_on %> </div>
