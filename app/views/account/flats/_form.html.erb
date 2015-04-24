@@ -4,7 +4,7 @@
       <%= simple_form_for(@flat, url: (@flat.new_record? ? account_flats_path : account_flat_path(@flat)), html: { multipart: true }) do |flat| %>
 
       <%= flat.input :title %>
-      <%= flat.input :description, as: :text, input_html: { minlenght: 50} %>
+      <%= flat.input :description, as: :text, input_html: {minlenght: 50} %>
       <%= flat.input :price %>
       <%= flat.input :address %>
       <%= flat.input :city %>
