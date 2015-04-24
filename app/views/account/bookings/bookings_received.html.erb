@@ -7,15 +7,16 @@
         <% flat.bookings.each do |booking| %>
           <div class="col-xs-12 col-md-4">
             <div class="card_booking text-center">
-
-              <div><%= image_tag(flat.picture_1)%></div>
               <div><%= Flat.find(booking.flat_id).title %></div>
+              <br>
+              <div><%= image_tag(flat.picture_1)%></div>
+              <br>
                 <div> <strong>Starting on </strong> <%= booking.starting_on %> </div>
                 <div> <strong>Ending on </strong> <%= booking.ending_on %> </div>
                 <div>
                   <%= simple_form_for [flat, booking] do |f| %>
                     <%= f.input :accepted, as: :boolean, accepted: true %>
-                    <%= f.button :submit %>
+                    <%= f.button :submit, class: "btn btn-success" %>
                   <% end %>
                 </div>
               </div>
