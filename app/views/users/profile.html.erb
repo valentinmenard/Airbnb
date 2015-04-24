@@ -1,2 +1,11 @@
-<h1>Hello <%= current_user.name %> </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= image_tag(current_user.image(:medium)) %>
+      <%= current_user.name %>
+      <%= current_user.email %>
 
+      <%= link_to("Edit", edit_user_registration_path(current_user), class: "btn btn-default btn-xs btn-right") %>
+    </div>
+  </div>
+</div>

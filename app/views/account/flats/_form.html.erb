@@ -10,7 +10,6 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for(@flat, url: (@flat.new_record? ? account_flats_path : account_flat_path(@flat)), html: { multipart: true }) do |flat| %>
-
       <%= flat.input :title, placeholder:"Nice Appartment in Paris" %>
       <%= flat.input :description, as: :text, input_html: { minlenght: 50}, placeholder:"Near Eiffel Tower, ..." %>
       <%= flat.input :price, placeholder:"70 €" %>

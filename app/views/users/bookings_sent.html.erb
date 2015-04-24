@@ -1,21 +1,29 @@
-<h1>Your bookings</h1>
-<ul>
-  <% current_user.bookings.each do |booking| %>
-    <li>
-      <%= image_tag Flat.find(booking.flat_id).picture_1 %>
-    </li>
-    <li>
-      <%= Flat.find(booking.flat_id).title %>
-    </li>
-    <li>
-      <%= booking.starting_on %>
-    </li>
-    <li>
-      <%= booking.ending_on %>
-    </li>
-    <li>
-      <%= booking.travellers %>
-    </li>
-  <% end %>
+<h1 class="title-center">Your bookings</h1>
 
-</ul>
+
+<div class="container">
+  <div class="row">
+      <% current_user.bookings.each do |booking| %>
+        <div class="col-xs-12 col-md-4">
+          <ul class="list-inline">
+            <div class="card_booking text-center">
+              <li>
+                <%= image_tag Flat.find(booking.flat_id).picture_1 %>
+              </li>
+              <li>
+                <%= Flat.find(booking.flat_id).title %>
+              </li>
+              <li>
+                <strong>starting on </strong> <%= booking.starting_on %>
+              </li>
+              <li>
+                <strong>ending on </strong> <%= booking.ending_on %>
+              </li>
+              <li>
+                <strong>travellers</strong> <%= booking.travellers %>
+              </li>
+          </ul>
+        </div>
+      <% end %>
+  </div>
+</div>

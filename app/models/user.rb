@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   has_many :pictures, through: :flats
   devise :omniauthable, :omniauth_providers => [ :facebook ]
 
+  has_attached_file :avatar,
+    :styles => { :medium => "300x300>", :thumb => "100x100#" }
+  validates_attachment_content_type :avatar,
+    :content_type => /\Aimage\/.*\Z/
+
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
@@ -18,6 +23,14 @@ class User < ActiveRecord::Base
       user.picture = auth.info.image
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
+    end
+  end
+
+  def image(style)
+    if avatar.exists?
+      avatar.url(style)
+    else
+      picture
     end
   end
 end
