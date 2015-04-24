@@ -1,0 +1,17 @@
+<div id="search">
+  <%= form_tag(flats_path, method: :get, class: "form-inline text-center") do %>
+    <div class="form-group">
+      <%= text_field_tag(:city, params[:city], placeholder: "Where?", class: "form-control") %>
+    </div>
+    <div class="form-group">
+      <%= number_field_tag(:travellers, params[:travellers], placeholder: "How many", class: "form-control") %>
+    </div>
+    <div class="form-group">
+      <%= date_field_tag(:starting_on, params[:starting_on], placeholder: "Arrival date", class: "form-control") %>
+    </div>
+    <div class="form-group">
+      <%= date_field_tag(:ending_on, params[:ending_on], placeholder: "Departure date", class: "form-control") %>
+    </div>
+      <%= submit_tag("Find !", class: "btn btn-danger") %>
+  <% end %>
+</div>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :flats, only: [:index, :show] do
 
-    resources :bookings, only: [:index, :new, :create]
+    resources :bookings, only: [:index, :new, :create, :update]
   end
 
   namespace :account do
