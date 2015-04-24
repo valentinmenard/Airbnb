@@ -15,4 +15,8 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require bootstrap-datepicker
 
+$(document).ready(function(){
+    $('.datepicker').datepicker({ format: "dd/mm/yyyy" });
+  });

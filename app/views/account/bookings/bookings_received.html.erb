@@ -8,10 +8,10 @@
           <div class="col-xs-12 col-md-4">
             <div class="card_booking text-center">
               <div> <%= image_tag(flat.picture_1)%></div>
-              <div><%= Flat.find(booking.flat_id).title %></div>
-               <div> <strong>starting on </strong> <%= booking.starting_on %></div>
-               <div> <strong>ending on </strong> <%= booking.ending_on %></div>
-               <div><%= booking.accepted %></div>
+              <p><%= Flat.find(booking.flat_id).title %></p>
+               <p> <strong>starting on </strong> <%= booking.starting_on %></p>
+               <p> <strong>ending on </strong> <%= booking.ending_on %></p>
+               <p><%= booking.accepted %></p>
               </div>
             </div>
         <% end %>
