@@ -9,14 +9,11 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 //= require jquery
-//= require jquery_ujs
-
 //= require bootstrap-sprockets
-//= require_tree .
-
-// app/assets/javascripts/application.js
-
+//= require jquery_ujs
 //= require underscore
 //= require gmaps/google
+//= require_tree .
+
+
