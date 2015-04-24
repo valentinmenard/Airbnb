@@ -17,38 +17,8 @@
     <p>Anywhere at Home</p>
   </div>
 
-  <div id="search">
-<!--     <form class="form-inline text-center">
-      <div class="form-group">
-        <label for="exampleInputName2"></label>
-        <input type="text" class="form-control" id="" placeholder="Where do u wanna go ?">
-      </div>
-      <div class="form-group">
-        <label for=""></label>
-        <input type="email" class="form-control" id="" placeholder="Starting on">
-      </div>
-      <div class="form-group">
-        <label for=""></label>
-        <input type="email" class="form-control" id="" placeholder="Ending on">
-      </div>
-      <div class="form-group">
-        <label for=""></label>
-        <input type="email" class="form-control" id="" placeholder="Travellers Number">
-      </div>
+    <%= render "flats/searchbar" %>
 
-      <button type="submit" class="btn btn-default">Search</button>
-    </form> -->
-
-      <form accept-charset="UTF-8" action="/flats" method="get"class="form-inline text-center">
-        <input name="utf8" type="hidden" value="&#x2713;" />
-        <label for="q"></label>
-        <input id="q" name="q" type="text" placeholder="Where do u wanna go"/>
-        <label for="q"></label>
-        <input id="q" name="q" type="text" placeholder="Travellers Number"/>
-        <input name="commit" type="submit" class="btn btn-default" value="Search" />
-      </form>
-
-  </div>
 
   <div class="text-center">
     <h1>List of flats available</h1>
